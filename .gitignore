@@ -3,6 +3,12 @@ __pycache__/
 *.py[cod]
 *$py.class
 
+*.java
+solverJava.py
+
+*.pdf
+
+
 # C extensions
 *.so
 
