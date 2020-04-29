@@ -43,7 +43,6 @@ def solve_it(input_data):
     capacity_dict = {0: {"value": 0, "items": set()}}
     for ww in range(1, capacity + 1):
         # simple searches
-        print(ww)
         item_lookup = item_dict.get(ww, {"value": 0})
         previous_value = capacity_dict.get(ww - 1, {"value": 0})
         if item_lookup["value"] >= previous_value["value"]:
@@ -65,7 +64,6 @@ def solve_it(input_data):
                 capacity_dict[ww] = {"value": new_sum, "items": uu}
 
     # prepare the solution in the specified output format
-    print(capacity_dict)
     final_items = {item.weight: item for item in items}
     for i in capacity_dict[capacity]["items"]:
         final_items[i].taken = True
