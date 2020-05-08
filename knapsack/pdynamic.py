@@ -20,16 +20,6 @@ def solve_it(input_data):
         def __hash__(self):
             return self.index
 
-    # class Item:
-    #     def __init__(self,index,value,weight,taken=False):
-    #         self.index= index
-    #         self.value= value
-    #         self.weight = weight
-    #         self.taken = taken
-
-    #         def __hash__(self):
-    #             return self.index
-
     lines = input_data.split("\n")
     firstLine = lines[0].split()
     item_count = int(firstLine[0])

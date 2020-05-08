@@ -7,28 +7,25 @@ from functools import reduce
 
 
 def solve_it(input_data):
-    # Modify this code to run your optimization algorithm
 
-    # parse the input
-    @dataclass
-    class Item:
-        index: int
-        value: int
-        weight: int
-        taken: bool = False
-
-        def __hash__(self):
-            return self.index
-
+    # @dataclass
     # class Item:
-    #     def __init__(self,index,value,weight,taken=False):
-    #         self.index= index
-    #         self.value= value
-    #         self.weight = weight
-    #         self.taken = taken
+    #     index: int
+    #     value: int
+    #     weight: int
+    #     taken: bool = False
 
-    #         def __hash__(self):
-    #             return self.index
+    #     def __hash__(self):
+    #         return self.index
+    class Item:
+        def __init__(self, index, value, weight, taken=False):
+            self.index = index
+            self.value = value
+            self.weight = weight
+            self.taken = taken
+
+            def __hash__(self):
+                return self.index
 
     lines = input_data.split("\n")
     firstLine = lines[0].split()
@@ -67,17 +64,3 @@ def solve_it(input_data):
     output_data = str(value) + " " + str(0) + "\n"
     output_data += " ".join(map(str, taken))
     return output_data
-
-
-if __name__ == "__main__":
-    import sys
-
-    if len(sys.argv) > 1:
-        file_location = sys.argv[1].strip()
-        with open(file_location, "r") as input_data_file:
-            input_data = input_data_file.read()
-        print(solve_it(input_data))
-    else:
-        print(
-            "This test requires an input file.  Please select one from the data directory. (i.e. python solver.py ./data/ks_4_0)"
-        )
